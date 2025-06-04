@@ -59,11 +59,11 @@ Logs changes made to an object.
 ```json
 {
   "before": {
-    "Name": "John",
+    "Name": "Mahima",
     "Age": 25
   },
   "after": {
-    "Name": "John Smith",
+    "Name": "Mahima Munjal",
     "Age": 26
   },
   "action": "Updated",
@@ -86,8 +86,8 @@ Logs changes made to an object.
   "changes": [
     {
       "propertyName": "Name",
-      "oldValue": "John",
-      "newValue": "John Smith"
+      "oldValue": "Mahima",
+      "newValue": "Mahima Munjal"
     },
     {
       "propertyName": "Age",
