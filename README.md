@@ -15,17 +15,22 @@ AuditTrailAPI is a .NET-based Web API that provides an audit logging mechanism t
 ---
 
 ## 📁 Project Structure
-- AuditTrailAPI : API Controllers and Startup Configuration
-- AuditTrailService : Core business logic for audit tracking
-- AuditTrailRepository : In memory repository implementation
-- AuditTrailShared : Models, enums, and shared utilities
 
-### Prerequisites
+- `AuditTrailAPI` : API Controllers and Startup Configuration  
+- `AuditTrailService` : Core business logic for audit tracking  
+- `AuditTrailRepository` : In-memory repository implementation  
+- `AuditTrailShared` : Models, enums, and shared utilities
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+---
+
+## ✅ Prerequisites
+
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)  
 - Visual Studio or VS Code
 
-### Steps to Run
+---
+
+## ▶️ Steps to Run
 
 ```bash
 # Clone the repository
@@ -39,14 +44,17 @@ dotnet restore
 
 # Run the API
 dotnet run --project AuditTrailAPI
+```
 
-## 🚩 API Endpoint
+---
 
-### POST /log
+##  API Endpoint
+
+### POST `/log`
+
 Logs changes made to an object.
 
-**Request Body Example:**
-
+#### Request Body Example:
 
 ```json
 {
@@ -58,18 +66,23 @@ Logs changes made to an object.
     "Name": "John Smith",
     "Age": 26
   },
-  "action": 2,
+  "action": "Updated",
   "userId": "user123",
   "entityName": "User"
 }
-action: 1 - Created, 2 - Updated, 3 - Deleted
+```
 
-Response Example:
-json
+> **Action Codes:**  
+> 1 - Created, 2 - Updated, 3 - Deleted
+
+#### 📤 Response Example:
+
+```json
 {
   "entityName": "User",
   "userId": "user123",
   "action": "Updated",
+  "timestamp": "2025-06-04T12:09:04.2935926Z",
   "changes": [
     {
       "propertyName": "Name",
@@ -83,3 +96,4 @@ json
     }
   ]
 }
+```
